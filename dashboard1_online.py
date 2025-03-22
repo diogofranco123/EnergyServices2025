@@ -13,16 +13,16 @@ from sklearn.ensemble import RandomForestRegressor
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 # Load 2019 data
-df_2019 = pd.read_csv('C:/Diogo/EnServ/Project2/testData_2019_Civil.csv')
+df_2019 = pd.read_csv('testData_2019_Civil.csv')
 
 df_2019["Date"] = pd.to_datetime(df_2019["Date"])
 variables = df_2019.columns[1:]
 
 # Load models
-XGB_model = joblib.load('C:/Diogo/EnServ/Project2/XGB_model.pkl')
-NN_model = joblib.load('C:/Diogo/EnServ/Project2/NN_model.pkl')
-RF_model = joblib.load('C:/Diogo/EnServ/Project2/RF_model.pkl')
-BT_model = joblib.load('C:/Diogo/EnServ/Project2/BT_model.pkl')
+XGB_model = joblib.load('XGB_model.pkl')
+NN_model = joblib.load('NN_model.pkl')
+RF_model = joblib.load('RF_model.pkl')
+BT_model = joblib.load('BT_model.pkl')
 
 # Prepare features for model
 df_new = df_2019.drop(columns=['windSpeed_m/s', 'windGust_m/s', 'pres_mbar', 'rain_mm/h', 'rain_day'])
