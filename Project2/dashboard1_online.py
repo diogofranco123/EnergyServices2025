@@ -85,6 +85,8 @@ df_real = pd.DataFrame({'Date': df_new['Date'].values, 'Real values': y_real_201
 
 # Dash app
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
+
 app.layout = html.Div([
     html.H1('IST Power Forecast tool CivilPav (kWh)'),
     dcc.Tabs(id='tabs', value='tab-1', children=[
